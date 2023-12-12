@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
         console.log(data);
         // alert('success');
         Swal.fire('Successfully done', 'User id is ' + data.id, 'success');
-        this._router.navigate(['/checkout']);
+        this._router.navigate(['/login']);
       },
       (error) => {
         // error

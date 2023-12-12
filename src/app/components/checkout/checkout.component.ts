@@ -184,4 +184,6 @@ export class CheckoutComponent implements OnInit {
       }
     );
   }
+
+  protected readonly onsubmit = onsubmit;
 }

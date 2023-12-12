@@ -21,6 +21,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './login/login.component';
+import {authInterceptorProviders} from './common/auth.interceptor';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { PaymentComponent } from './components/payment/payment.component';
+
+
+
+
 
 // client side paging
 // import { JwPaginationComponent } from 'jw-angular-pagination';
@@ -39,6 +47,22 @@ const routes: Routes = [
     pathMatch: 'full',
 
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'admin',
+    component: DashboardComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    pathMatch: 'full',
+  },
+
   {path: '', redirectTo: '/books', pathMatch: 'full'},
 
   {path: '**', component: PageNotFoundComponent}
@@ -55,7 +79,11 @@ const routes: Routes = [
     CartStatusComponent,
     CartDetailsComponent,
     CheckoutComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    DashboardComponent,
+    PaymentComponent,
+
     // client side paging
     // JwPaginationComponent
   ],
@@ -71,9 +99,13 @@ const routes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     MatSnackBarModule,
+
+
   ],
   providers: [
-    BookService
+    BookService,
+    authInterceptorProviders,
+
   ],
   bootstrap: [AppComponent]
 })
