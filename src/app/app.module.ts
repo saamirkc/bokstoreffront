@@ -25,8 +25,16 @@ import { LoginComponent } from './login/login.component';
 import {authInterceptorProviders} from './common/auth.interceptor';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { PaymentComponent } from './components/payment/payment.component';
-
-
+import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { ViewCategoryComponent } from './components/admin/view-category/view-category.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import { ViewBookComponent } from './components/admin/view-book/view-book.component';
+import { AddBookComponent } from './components/admin/add-book/add-book.component';
+import { ViewBookDetailsComponent } from './components/admin/view-book-details/view-book-details.component';
+import {MatSelectModule, MatSlideToggleModule} from '@angular/material';
 
 
 
@@ -55,7 +63,28 @@ const routes: Routes = [
   {
     path: 'admin',
     component: DashboardComponent,
-    pathMatch: 'full',
+    children : [
+      {
+        path: 'categories',
+        component : ViewCategoryComponent,
+      },
+      {
+        path: 'add-category',
+        component : AddCategoryComponent,
+      },
+      {
+        path: 'view-book',
+        component : ViewBookComponent,
+      },
+      {
+        path: 'add-book',
+        component : AddBookComponent,
+      },
+      {
+        path: 'view-book/:id',
+        component: ViewBookDetailsComponent,
+      }
+    ]
   },
   {
     path: 'payment',
@@ -83,6 +112,12 @@ const routes: Routes = [
     LoginComponent,
     DashboardComponent,
     PaymentComponent,
+    SidebarComponent,
+    ViewCategoryComponent,
+    AddCategoryComponent,
+    ViewBookComponent,
+    AddBookComponent,
+    ViewBookDetailsComponent,
 
     // client side paging
     // JwPaginationComponent
@@ -99,8 +134,11 @@ const routes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     MatSnackBarModule,
-
-
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
   providers: [
     BookService,

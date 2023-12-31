@@ -1,0 +1,70 @@
+<mat-card>
+<!--    {{bookData|json}}-->
+  <h1>Add New Book</h1>
+  <div class="container text-center mt-20">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)="addBook()">
+          <!--        creating title-->
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label  >Enter name of the book</mat-label>
+            <input [(ngModel)]="bookData.name"  type="text" name="name" matInput placeholder="Enter here" required>
+
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label >Enter Description</mat-label>
+            <textarea [(ngModel)]="bookData.description"  type="text" name="description" matInput placeholder="Enter description here"  rows="5"></textarea>
+          </mat-form-field>
+
+
+          <div class="row">
+<!--            <div class="col-md-6 ">-->
+<!--              <mat-form-field class="full-width" appearance="outline">-->
+<!--                <mat-label  >Enter sku of book</mat-label>-->
+<!--                <textarea [(ngModel)]="bookData.stockKeepingUnit"  type="text" name="stockKeepingUnit" matInput placeholder="Enter here"></textarea>-->
+<!--              </mat-form-field>-->
+
+<!--            </div>-->
+
+              <div class="col-md-6 ">
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label  >Enter price of book</mat-label>
+                  <textarea [(ngModel)]="bookData.unitPrice"  type="text" name="unitPrice" matInput placeholder="Enter price here"></textarea>
+                </mat-form-field>
+              </div>
+            <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label  >Enter stocks of book</mat-label>
+              <textarea [(ngModel)]="bookData.unitsInStock"  type="text" name="unitsInStock" matInput placeholder="Enter total stocks here"></textarea>
+            </mat-form-field>
+          </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-1">
+              <mat-slide-toggle [(ngModel)]="bookData.active" name="active"
+                                class=" mt-20  " [checked]="false">
+                Publish status
+              </mat-slide-toggle>
+            </div>
+          </div>
+
+          <mat-form-field class="mt-20 full-width " appearance="fill">
+            <mat-label>Categories</mat-label>
+            <mat-select  name="category" [(ngModel)]="bookData.category.id">
+              <mat-option *ngFor="let c of categories" [value]="c.id">
+                {{c.categoryName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="container text-center mb-20">
+            <button mat-raised-button color="accent" type="submit">Add</button>
+
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</mat-card>
