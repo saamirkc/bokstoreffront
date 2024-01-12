@@ -1,0 +1,22 @@
+.review {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.username {
+  font-family: 'Roboto', sans-serif; /* Use the Roboto font, or another font you prefer */
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Choose a color for the username */
+}
+
+.rating {
+  font-size: 18px;
+  color: #8623c8;
+}
+
+/* Optional: Add hover effect to stars */
+.rating:hover {
+  color: orange;
+}

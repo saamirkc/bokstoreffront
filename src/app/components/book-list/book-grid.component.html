@@ -12,8 +12,11 @@
       <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
         <div class="card h-100">
           <a routerLink="/books/{{book.id}}">
-            <img class="card-img-top img-responsive" [src]="book.imageUrl" height="250" width="100">
+            <img class="card-img-top img-responsive " [src]="book.imageUrl" height="250" width="100">
           </a>
+<!--            <img class="card-img-top img-responsive" [src]="getImageUrl(book.imageUrl)" height="250" width="100">-->
+
+
           <div class="card-body">
             <h4 class="card-title">
               <a routerLink="/books/{{book.id}}">{{book.name}}</a>
@@ -23,8 +26,11 @@
           </div>
           <div class="card-footer">
 <!--            <button class="btn btn-primary float-right" (click)="addToCart(book)">Add Cart</button>-->
-            <button mat-raised-button color="accent" class="float-right" (click)="addToCart(book)">Add Cart</button>
+<!--            <button mat-raised-button color="accent" class="float-right" (click)="addToCart(book)">Add Cart</button>-->
+            <button mat-raised-button color="accent" class="float-md-right" (click)="addToCart(book)" >Add Cart</button>
+
           </div>
+
         </div>
       </div>
       <div *ngIf="books?.length == 0" class="col-md-12 alert alert-warning mt-1">

@@ -1,0 +1,35 @@
+
+      <div class="col-md-9">
+        <div *ngFor="let review of reviews">
+          <div class="review">
+            <h3 class="username">{{ review.username }}:</h3>
+            <p>{{ review.comment }}</p>
+            <p class="rating">
+              Rating:
+              <ng-container *ngFor="let _ of getStarsArray(review.rating)">
+                ⭐
+              </ng-container>
+            </p>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+<!--        <h2>Add a Review</h2>-->
+<!--        <form (submit)="addReview()">-->
+<!--&lt;!&ndash;          <label for="username">Username:</label>&ndash;&gt;-->
+<!--          <mat-label>Username</mat-label>-->
+<!--          <input type="text" name="username" [(ngModel)]="newReview.username" required>-->
+
+<!--          <mat-label>Comment</mat-label>-->
+<!--          <textarea name="comment" [(ngModel)]="newReview.comment" required></textarea>-->
+
+<!--          <mat-label>Ratings</mat-label>-->
+<!--          <input type="number" name="rating" [(ngModel)]="newReview.rating" required>-->
+
+<!--          <button  type ="submit"   mat-raised-button color="primary">Submit</button>-->
+<!--        </form>-->
+

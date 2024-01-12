@@ -42,4 +42,5 @@ export class BookDetailsComponent implements OnInit {
     this._cartService.addToCart(cartItem);
   }
 
+
 }

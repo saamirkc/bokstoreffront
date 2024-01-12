@@ -1,0 +1,85 @@
+<!--<div class="col-md-9">-->
+<!--  <div *ngFor="let review of reviews">-->
+<!--    <div class="review">-->
+<!--      <h3 class="username">{{ review.username }}:</h3>-->
+<!--      <p>{{ review.comment }}</p>-->
+<!--      <p class="rating">-->
+<!--        Rating:-->
+<!--        <ng-container *ngFor="let _ of getStarsArray(review.rating)">-->
+<!--          ⭐-->
+<!--        </ng-container>-->
+<!--      </p>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+<div class="bootstrap wrapper">
+  <div class="content text-center">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1>Add a Review</h1>
+<!--        {{newReview|json}}-->
+        <mat-card>
+          <form (submit)="addReview()">
+            <!--          <label for="username">Username:</label>-->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input type="text" name="username" [(ngModel)]="newReview.username" required
+                     matInput placeholder="Enter username">
+            </mat-form-field>
+
+            <mat-form-field class=full-width appearance="outline">
+              <mat-label>Comment</mat-label>
+              <textarea type="text" name="comment" [(ngModel)]="newReview.comment" required
+                        matInput placeholder="Enter comment"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Rating</mat-label>
+              <input type="number" name="rating" [(ngModel)]="newReview.rating" required
+                     matInput placeholder="Rate from 0 to 5">
+            </mat-form-field>
+
+            <button  type ="submit"   mat-raised-button color="primary">Submit</button>
+          </form>
+        </mat-card>
+
+
+      </div>
+    </div>
+  </div>
+
+   </div>
+
+
+<!--<h2>Add a Review</h2>-->
+<!--{{newReview|json}}-->
+<!--<mat-card>-->
+<!--  <form (submit)="addReview()">-->
+<!--    &lt;!&ndash;          <label for="username">Username:</label>&ndash;&gt;-->
+<!--    <mat-form-field class="full-width" appearance="outline">-->
+<!--      <mat-label>Username</mat-label>-->
+<!--      <input type="text" name="username" [(ngModel)]="newReview.username" required-->
+<!--        matInput placeholder="Enter username">-->
+<!--    </mat-form-field>-->
+<!--&lt;!&ndash;    <mat-label>Username</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="username" [(ngModel)]="newReview.username" required>&ndash;&gt;-->
+<!--    <mat-form-field class=full-width appearance="outline">-->
+<!--      <mat-label>Comment</mat-label>-->
+<!--      <textarea type="text" name="comment" [(ngModel)]="newReview.comment" required-->
+<!--                matInput placeholder="Enter comment"></textarea>-->
+<!--    </mat-form-field>-->
+<!--&lt;!&ndash;    <mat-label>Comment</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;    <textarea name="comment" [(ngModel)]="newReview.comment" required></textarea>&ndash;&gt;-->
+<!--    <mat-form-field class="full-width" appearance="outline">-->
+<!--      <mat-label>Rating</mat-label>-->
+<!--      <input type="number" name="rating" [(ngModel)]="newReview.rating" required-->
+<!--                matInput placeholder="Rate from 0 to 5">-->
+<!--    </mat-form-field>-->
+<!--&lt;!&ndash;    <mat-label>Ratings</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="number" name="rating" [(ngModel)]="newReview.rating" required>&ndash;&gt;-->
+
+<!--    <button  type ="submit"   mat-raised-button color="primary">Submit</button>-->
+<!--  </form>-->
+<!--</mat-card>-->
+

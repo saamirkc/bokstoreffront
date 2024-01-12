@@ -24,17 +24,22 @@
 
         <div class="card h-100">
           <a routerLink="/admin/view-book/{{b.id}}">
-            <img class="card-img-top img-responsive" [src]="b.imageUrl" height="250" width="100">
+            <img class="card-img-top img-responsive " [src]="b.imageUrl" height="250" width="100">
+
+<!--            <img class="card-img-top img-responsive " [src]=serveImage(b.imageUrl) height="250" width="100">-->
+
+
           </a>
-          <div class="card-body">
+          <div class="card-body ">
             <h4 class="card-title">
               <a routerLink="/admin/view-book/{{b.id}}">{{b.name}}</a>
             </h4>
             <h5>{{b.unitPrice | currency: 'NRS '}}</h5>
-            <p class="card-text text-truncate">{{b.description}}</p>
+            <p class="card-text text-truncate ">{{b.description}}</p>
           </div>
           <div class="card-footer">
-            <!--            <button class="btn btn-primary float-right" (click)="addToCart(book)">Add Cart</button>-->
+<!--                        <button class="btn btn-accent float-right" (click)="deleteBook(b.id)">Delete</button>-->
+            <button mat-raised-button color="accent" class="float-md-right" (click)="deleteBook(b.id)" >Delete</button>
 
           </div>
         </div>
@@ -89,3 +94,52 @@
 </div>
 
 
+<!--<div class="row">-->
+<!--  <div class="col-lg-3"></div>-->
+<!--  <div class="col-lg-9">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of getBook">-->
+<!--        <div class="card h-100">-->
+<!--          <img class="card-img-top" [src]="getProfileImage(book.imageUrl)" alt="{{book.name}}">-->
+<!--          <img class="card-img-top" [src]="getProfileImage(book.imageUrl) | async" alt="{{book.name}}">-->
+<!--          <div class="card-body">-->
+<!--            <h4 class="card-title">-->
+<!--              <a routerLink="/admin/view-book/{{book.id}}">{{book.name}}</a>-->
+<!--            </h4>-->
+<!--            <h5>{{book.unitPrice | currency: 'NRS '}}</h5>-->
+<!--            <p class="card-text text-truncate">{{book.description}}</p>-->
+<!--          </div>-->
+<!--          <div class="card-footer">-->
+<!--            <button mat-raised-button color="accent" class="float-md-right" (click)="deleteBook(book.id)">Delete</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-6">-->
+<!--        <div class="row">-->
+<!--          <div class="col-md-3">-->
+<!--            <span>Page Size: </span>-->
+<!--          </div>-->
+<!--          <div class="col-md-9">-->
+<!--            <select (change)="updatePageSize($event.target.value)" class="form-control-sm">-->
+<!--              <option>5</option>-->
+<!--              <option>10</option>-->
+<!--              <option>20</option>-->
+<!--              <option>50</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-6">-->
+<!--        <ngb-pagination [(page)]="currentPage" [pageSize]="pageSize" [collectionSize]="totalRecords" (pageChange)="listBooks()"-->
+<!--                        class="d-flex justify-content-end">-->
+<!--          <ng-template ngbPaginationFirst>First</ng-template>-->
+<!--          <ng-template ngbPaginationLast>Last</ng-template>-->
+<!--          <ng-template ngbPaginationPrevious>Prev</ng-template>-->
+<!--          <ng-template ngbPaginationNext>Next</ng-template>-->
+<!--        </ngb-pagination>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
